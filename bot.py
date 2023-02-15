@@ -3,6 +3,11 @@ import os
 
 import discord
 
+def create_fork():
+    print("fork created")
+
+create_fork()
+
 TOKEN = open('token.txt').read().split()[0]
 print(TOKEN)
 intents = discord.Intents.all()
@@ -27,5 +32,5 @@ async def on_message(message):
         return
     elif user_message.lower() == "bye":
         await message.channel.send(f'Bye {username}')
-
+        
 client.run(TOKEN)
